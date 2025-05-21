@@ -1,0 +1,26 @@
+{
+  "2025-06": {
+    "cover": "assets/covers/rubbish-issue3.png",
+    "articles": [
+      "量子猫屎的社会结构研究",
+      "被地心引力骗了37年的我",
+      "微生物也会谈恋爱吗？——来自显微镜下的情书"
+    ]
+  },
+  "2025-05": {
+    "cover": "assets/covers/rubbish-issue2.png",
+    "articles": [
+      "超导体里跳霹雳舞的电子",
+      "如何通过量子干涉写作弊答案",
+      "当牛顿遇到AI：苹果不再掉下来"
+    ]
+  },
+  "2025-04": {
+    "cover": "assets/covers/rubbish-issue1.png",
+    "articles": [
+      "海参能不能当导弹",
+      "用黑洞解决垃圾分类",
+      "数学家证明“我妈叫你回家吃饭”是NP问题"
+    ]
+  }
+}

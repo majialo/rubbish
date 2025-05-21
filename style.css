@@ -1,0 +1,50 @@
+/* 期刊选择导航 */
+nav {
+  margin-top: 1rem;
+}
+
+#issue-select {
+  font-size: 1rem;
+  padding: 0.4rem;
+}
+
+/* 主内容布局为左右分栏 */
+.issue-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.cover, .articles {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cover img {
+  max-width: 100%;
+  border: 5px dashed magenta;
+}
+
+/* 保留其他基本样式 */
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #cc00ff, #00ccff);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
