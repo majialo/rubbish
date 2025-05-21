@@ -48,3 +48,49 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
+/* —— 小工具 样式 —— */
+.widgets {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.widgets button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+#random-fact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px dashed #cc00ff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+}
+#random-fact p {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.9rem;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* —— 暗黑模式 —— */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark-mode header,
+body.dark-mode footer {
+  background: #333 !important;
+}
+body.dark-mode .cover img {
+  border-color: #555;
+}
+body.dark-mode .articles a {
+  color: #8ac6ff;
+}
+
