@@ -1,40 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const select = document.getElementById("issue-select");
-  const coverImg = document.getElementById("cover-img");
-  const articleList = document.getElementById("article-list");
-
-  fetch("data/issues.json")
-    .then(response => response.json())
-    .then(data => {
-      // 初始填充
-      updateIssue(data, select.value);
-
-      // 切换期刊
-      select.addEventListener("change", () => {
-        const selected = select.value;
-        updateIssue(data, selected);
-      });
-    });
-
-  function updateIssue(data, issueId) {
-    const issue = data[issueId];
-    if (!issue) return;
-
-    // 更新封面
-    coverImg.src = issue.cover;
-
-    // 更新文章列表
-    articleList.innerHTML = "";
-    issue.articles.forEach(title => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = "#";
-      a.textContent = title;
-      li.appendChild(a);
-      articleList.appendChild(li);
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
   // —— 1. 期刊切换功能 ——  
   const select      = document.getElementById("issue-select");
   const coverImg    = document.getElementById("cover-img");
@@ -54,14 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateIssue(data, issueId) {
     const issue = data[issueId];
     if (!issue) return;
+    // 更新封面
     coverImg.src = issue.cover;
-    // 如果你还要更新“点击阅读本期”的链接，也可以在这里更新它的 href
+    // 更新文章列表
     articleList.innerHTML = "";
     issue.articles.forEach(title => {
       const li = document.createElement("li");
       const a  = document.createElement("a");
-      a.href    = "#";
-      a.textContent = title;
+      a.href          = "#";
+      a.textContent   = title;
       li.appendChild(a);
       articleList.appendChild(li);
     });
@@ -94,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showFact();
   refreshFact.addEventListener("click", showFact);
 });
+
 
   }
 });
