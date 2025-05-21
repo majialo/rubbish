@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rubbish 杂志</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,47 +18,34 @@
         <option value="2025-04">2025年4月 第1期</option>
       </select>
     </nav>
+    <div class="widgets">
+      <button id="dark-toggle">🌓 切换暗黑模式</button>
+      <div id="random-fact">
+        <p id="fact-text">……</p>
+        <button id="refresh-fact">🔄 再来一句</button>
+      </div>
+    </div>
   </header>
 
-  <!-- 放在 header 里面或紧接 header 之后 -->
-<div class="widgets">
-  <!-- 暗黑模式切换按钮 -->
-  <button id="dark-toggle">🌓 切换暗黑模式</button>
-
-  <!-- 随机趣闻生成器 -->
-  <div id="random-fact">
-    <p id="fact-text">……</p>
-    <button id="refresh-fact">🔄 再来一句</button>
-  </div>
-</div>
-
-<main class="issue-container">
-  <div class="cover">
-    <h2>本期封面</h2>
-    <!-- 加上 id="cover-img" -->
-    <img
-      id="cover-img"
-      src="assets/covers/rubbish-issue2.png"
-      alt="Rubbish Issue 3 Cover"
-    />
-    <p><a href="#">点击阅读本期</a></p>
-  </div>
-
-  <div class="articles">
-    <h2>文章列表</h2>
-    <!-- 给 ul 加上 id="article-list" -->
-    <ul id="article-list">
-      <li><a href="#">量子猫屎的社会结构研究</a></li>
-      <li><a href="#">被地心引力骗了37年的我</a></li>
-      <li><a href="#">微生物也会谈恋爱吗？——来自显微镜下的情书</a></li>
-    </ul>
-  </div>
-</main>
-
+  <main class="issue-container">
+    <div class="cover">
+      <h2>本期封面</h2>
+      <img id="cover-img" src="assets/covers/rubbish-issue3.png" alt="Rubbish Issue Cover" />
+      <p><a href="#">点击阅读本期</a></p>
+    </div>
+    <div class="articles">
+      <h2>文章列表</h2>
+      <ul id="article-list"></ul>
+    </div>
+  </main>
 
   <footer>
     <p>© 2025 rubbish magazine. All nonsense reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
