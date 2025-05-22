@@ -1,37 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // —— 1. 期刊切换功能 ——  
-  const select      = document.getElementById("issue-select");
-  const coverImg    = document.getElementById("cover-img");
+  const select = document.getElementById("issue-select");
+  const coverImg = document.getElementById("cover-img");
   const articleList = document.getElementById("article-list");
 
   fetch("data/issues.json")
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
-      // 初始显示
+      // 初始填充
       updateIssue(data, select.value);
-      // 切换事件
+
+      // 切换期刊
       select.addEventListener("change", () => {
-        updateIssue(data, select.value);
+        const selected = select.value;
+        updateIssue(data, selected);
       });
     });
 
   function updateIssue(data, issueId) {
     const issue = data[issueId];
     if (!issue) return;
+
     // 更新封面
     coverImg.src = issue.cover;
+
     // 更新文章列表
     articleList.innerHTML = "";
     issue.articles.forEach(title => {
       const li = document.createElement("li");
-      const a  = document.createElement("a");
-      a.href          = "#";
-      a.textContent   = title;
+      const a = document.createElement("a");
+      a.href = "#";
+      a.textContent = title;
       li.appendChild(a);
       articleList.appendChild(li);
     });
   }
-
   // —— 2. 暗黑模式切换 ——  
   const darkToggle = document.getElementById("dark-toggle");
   darkToggle.addEventListener("click", () => {
@@ -58,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 首次加载 & 点击刷新
   showFact();
   refreshFact.addEventListener("click", showFact);
-});
-
-
+  });
   }
 });
