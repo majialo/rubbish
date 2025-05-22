@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "研究表明：猫的喵叫频率可用于调制无线信号。",
     "微生物大会开幕，主题是“如何在黑暗中优雅地发光”。",
     "最新成果：用黑洞清理垃圾分类的效率提高了200%。",
-    "牛顿其实是被披萨砸到才产生万有引力定律的灵感。"
+    "牛顿其实是被披萨砸到才产生万有引力定律的灵感。",
+    "科学家发现外国有那么多个而中国只有一个",
+    "用黄河代替电网的输电工程正式开启",
+    "据研究人类下一个进化的器官将是充电宝",
+    "人们惊讶的发现小偷在被抓之前，整个世界都是他的"
   ];
   const factText    = document.getElementById("fact-text");
   const refreshFact = document.getElementById("refresh-fact");
