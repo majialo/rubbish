@@ -1,55 +1,39 @@
-/* 期刊选择导航 */
-nav {
-  margin-top: 1rem;
+/* ========== 全局 ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #333;
 }
 
-#issue-select {
+/* ========== Header 渐变区 ========== */
+.site-header {
+  background: linear-gradient(90deg, #ff00ff, #00ccff);
+  color: #fff;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+.header-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+.header-info p {
+  opacity: 0.9;
+}
+.header-nav {
+  text-align: center;
+  padding: 0.8rem 0 1.5rem;
+}
+.header-nav select {
   font-size: 1rem;
   padding: 0.4rem;
 }
 
-/* 主内容布局为左右分栏 */
-.issue-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.cover, .articles {
-  flex: 1;
-  min-width: 300px;
-}
-
-.cover img {
-  max-width: 100%;
-  border: 5px dashed magenta;
-}
-
-/* 保留其他基本样式 */
-body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-header {
-  background: linear-gradient(to right, #cc00ff, #00ccff);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* —— 小工具 样式 —— */
+/* ========== 小工具 样式 ========== */
 .widgets {
   display: flex;
   gap: 1rem;
@@ -78,19 +62,101 @@ footer {
   text-align: right;
 }
 
-/* —— 暗黑模式 —— */
+/* ========== 主体：黑底三栏布局 ========== */
+.issue-container {
+  display: flex;
+  gap: 2rem;
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  /* 根据需要居中并限制宽度 */
+  max-width: 1200px;
+  margin: -1.5rem auto 2rem; /* 负 margin 让内容区顶边和 header 接缝 */
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover, .articles {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* 封面框 */
+.cover img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 1rem 0;
+  border: 4px solid #fff;
+}
+
+/* 文章列表：红底线分割 */
+.articles ul {
+  list-style: none;
+}
+.articles li {
+  padding: 0.6rem 0;
+  border-bottom: 2px solid red;
+}
+.articles li:last-child {
+  border-bottom: none;
+}
+.articles a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* ========== 暗黑模式 ========== */
 body.dark-mode {
-  background-color: #121212;
+  background: #121212;
   color: #eee;
 }
-body.dark-mode header,
-body.dark-mode footer {
-  background: #333 !important;
+body.dark-mode .site-header {
+  background: #222 !important;
 }
-body.dark-mode .cover img {
-  border-color: #555;
+body.dark-mode .issue-container {
+  background: #111;
 }
-body.dark-mode .articles a {
-  color: #8ac6ff;
+body.dark-mode .articles li {
+  border-color: #ff4444;
+}
+
+/* ==== 原版权信息栏样式 ==== */
+/* —— 恢复黑框效果 —— */
+.issue-container {
+  display: flex;
+  gap: 2rem;
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  max-width: 1200px;
+  /* 这里恢复负 margin，让黑底部分往上顶到 header 下方 */
+  margin: -3rem auto 2rem;  
+  border-radius: 8px;
+  /* 加个阴影更立体 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* —— 确保 footer 拉满并居中 —— */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  /* 让它独占一行，避免被 issue-container 影响 */
+  clear: both;
+  width: 100%;
+}
+
+/* 向上提期刊选择栏，并置于黑框之上 */
+.header-nav {
+  position: relative;
+  margin-bottom: 10px;
+  top: -30px !important;   /* 往上提 30px，根据实际需求微调 */
+  z-index: 3 !important;    /* 确保它盖过黑底区 */
 }
 

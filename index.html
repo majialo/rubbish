@@ -2,49 +2,57 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rubbish 杂志</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>RUBBISH 杂志</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>RUBBISH 杂志</h1>
-    <p>科学的终极玩笑</p>
-    <nav>
+  <!-- ==== 顶部渐变 Header ==== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-info">
+        <h1>RUBBISH 杂志</h1>
+        <p>科学的终极玩笑</p>
+      </div>
+      <div class="widgets">
+        <button id="dark-toggle">🌓 切换暗黑模式</button>
+        <div id="random-fact">
+          <p id="fact-text">……</p>
+          <button id="refresh-fact">🔄 再来一句</button>
+        </div>
+      </div>
+    </div>
+    <div class="header-nav">
       <label for="issue-select">选择期刊：</label>
       <select id="issue-select">
         <option value="2025-06">2025年6月 第3期</option>
         <option value="2025-05">2025年5月 第2期</option>
         <option value="2025-04">2025年4月 第1期</option>
       </select>
-    </nav>
-    <div class="widgets">
-      <button id="dark-toggle">🌓 切换暗黑模式</button>
-      <div id="random-fact">
-        <p id="fact-text">……</p>
-        <button id="refresh-fact">🔄 再来一句</button>
-      </div>
     </div>
   </header>
 
+  <!-- ==== 黑底内容区：封面 + 文章列表 ==== -->
   <main class="issue-container">
     <div class="cover">
       <h2>本期封面</h2>
-      <img id="cover-img" src="assets/covers/rubbish-issue3.png" alt="Rubbish Issue Cover" />
+      <img 
+        id="cover-img" 
+        src="assets/covers/rubbish-issue3.png" 
+        alt="本期封面" 
+      />
       <p><a href="#">点击阅读本期</a></p>
     </div>
     <div class="articles">
       <h2>文章列表</h2>
-        <ul id="article-list">
-        <li><a href="#">量子猫屎的社会结构研究</a></li>
-        <li><a href="#">被地心引力骗了37年的我</a></li>
-        <li><a href="#">微生物也会谈恋爱吗？——来自显微镜下的情书</a></li>
+      <ul id="article-list">
+        <!-- JS 动态填充条目 -->
       </ul>
     </div>
   </main>
 
   <footer>
-    <p>© 2025 rubbish magazine. All nonsense reserved.本网站不对内容的真实性负责</p>
+    <p>© 2025 rubbish magazine. All nonsense reserved.</p>
   </footer>
 
   <script src="script.js"></script>
